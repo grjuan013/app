@@ -22,6 +22,10 @@ Route::get('/info', function () {
     return view('/info');
 });
 
+Route::post('/formulario', function () {
+    return view('/formulario');
+});
+
 Route::get('/formulario', function () {
     return view('/formulario');
 });
