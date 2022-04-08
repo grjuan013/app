@@ -1,7 +1,7 @@
 <?php
 if ($_POST)
 {
-    $personas = $_POST["personas"];
+    $personas = $_POST["numPersonas"];
     $promEner = $_POST["promEner"];
     $gasNatural = $_POST["gasNatural"];
     $glp = $_POST["glp"];
@@ -32,6 +32,6 @@ if ($_POST)
     $cantLeche = $_POST["cantLeche"];
     $frecLeche = $_POST["frecLeche"];
 
-    
+
     
 }

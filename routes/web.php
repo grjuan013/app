@@ -22,9 +22,7 @@ Route::get('/info', function () {
     return view('/info');
 });
 
-Route::post('/formulario', function () {
-    return view('/formulario');
-});
+Route::post('/formulario',[App\Http\Controllers\FormController::class, 'postCreate']);
 
 Route::get('/formulario', function () {
     return view('/formulario');
@@ -39,5 +37,10 @@ Route::get('/home',[App\Http\Controllers\HomeController::class, 'getNews'])->nam
 Route::get('/',[App\Http\Controllers\HomeController::class, 'getNews'])->name('get_news');
 
 
+
 Auth::routes();
+
+// Route::group(['middleware' => 'auth'], function () {
+//     Route::post('/formulario',[FormController::class, 'postCreate']);
+// });
 
