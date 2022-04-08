@@ -9,6 +9,16 @@ class News extends Model
 {
     use HasFactory;
     protected $table = 'noticias';
+
+    protected $fillable = [
+        'imagen',
+        'encabezado',
+        'resumen',
+        'autor',
+        'fecha',
+        'url_noticia'
+    ];
+
     protected $hidden = [
         'id_noticia',
         'imagen',

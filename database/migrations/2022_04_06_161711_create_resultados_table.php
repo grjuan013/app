@@ -17,6 +17,7 @@ class CreateResultadosTable extends Migration
         Schema::create('resultados', function (Blueprint $table) {
             $table->increments('id_resultado');
             $table->unsignedBigInteger('id_usuario');
+            $table->date('fecha');
             $table->double('transporte');
             $table->double('vivienda');
             $table->double('alimentacion');

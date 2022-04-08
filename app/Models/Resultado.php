@@ -9,6 +9,16 @@ class Resultado extends Model
 {
     use HasFactory;
     protected $table = 'resultados';
+
+    protected $fillable = [
+        'id_usuario',
+        'fecha',
+        'transporte',
+        'vivienda',
+        'alimentacion',
+        'total'
+    ];
+
     protected $hidden = [
         'id_resultado',
         'id_usuario',

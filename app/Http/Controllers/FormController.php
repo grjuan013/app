@@ -13,6 +13,7 @@ class FormController extends Controller
     {
         $resultado = new Resultado;
 
+        $fecha                  = $request->input('fechaFormulario');
         $personas               = $request->input('numPersonas');
         $promEner               = $request->input('promEner');
         $gasNatural             = $request->input('gasNatural');
@@ -46,15 +47,16 @@ class FormController extends Controller
 
         $id = $request->user()->id;
 
-        $vivienda       = $personas*($promEner*164.38 + $gasNatural*60 + $glp*2.96 + $carbon*2.30 + $lenia*0.75);
+        $vivienda       = (int)$personas*((int)$promEner*164.38 + (int)$gasNatural*60 + (int)$glp*2.96 + (int)$carbon*2.30 + (int)$lenia*0.75);
 
-        $transporte     = $avion*0.285 + $transportePublico*0.0284 + $taxi*0.1002 + $combustible*$combTanqueado*$promPersonas;
+        $transporte     = (int)$avion*0.285 + (int)$transportePublico*0.0284 + (int)$taxi*0.1002 + (int)$combustible*(int)$combTanqueado*(int)$promPersonas;
 
-        $alimentacion   = $cantCarnR*$frecCarnR*(27000/10000)+$cantCarnCord*$frecCarnCord*(39200/10000)+$cantCerd*$frecCerd*(3471.3/10000)+$cantPollo*$frecPollo*(35000/10000)+$cantQueso*$frecQueso*(9800/10000)+$cantYog*$frecYog*(1250/10000)+$cantHuevos*$frecHuevos*(31000/10000)+$cantAtun*$frecAtun*(5000/10000)+$cantLeche*$frecLeche*(2500/10000);
+        $alimentacion   = (int)$cantCarnR*(int)$frecCarnR*(27000/10000)+(int)$cantCarnCord*(int)$frecCarnCord*(39200/10000)+(int)$cantCerd*(int)$frecCerd*(3471.3/10000)+(int)$cantPollo*(int)$frecPollo*(35000/10000)+(int)$cantQueso*(int)$frecQueso*(9800/10000)+(int)$cantYog*(int)$frecYog*(1250/10000)+(int)$cantHuevos*(int)$frecHuevos*(31000/10000)+(int)$cantAtun*(int)$frecAtun*(5000/10000)+(int)$cantLeche*(int)$frecLeche*(2500/10000);
         
         $total          = $vivienda + $transporte + $alimentacion;
 
         $resultado->id_usuario = $id;
+        $resultado->fecha = $fecha;
         $resultado->vivienda = $vivienda;
         $resultado->alimentacion = $alimentacion;
         $resultado->transporte = $transporte;

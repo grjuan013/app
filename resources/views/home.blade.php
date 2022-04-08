@@ -15,7 +15,7 @@
                 
                 
                 @foreach ($noticias as $noticia)
-                <div class="carousel-item @if($noticia->id_noticia == 1) active @endif" style=" width:100%; max-height: 500px;margin-top:10px;">
+                <div class="carousel-item @if($noticia->id_noticia == 10) active @endif" style=" width:100%; max-height: 500px;margin-top:10px;">
                     <img src="{{$noticia->imagen}}" class="d-block w-100" alt="{{$noticia->id_noticia}}" style ="float: left;width: 500px;height: 500px;object-fit: cover;border-radius:10px;">
                         <div class="carousel-caption d-none d-md-block"> 
                             <h5>{{$noticia->encabezado}}</h5>

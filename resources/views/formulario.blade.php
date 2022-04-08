@@ -9,7 +9,7 @@
             {{method_field('POST')}}
             {{ csrf_field() }}
             <div class="form-group row">
-                <label for="fechaFormulario" class="col-sm-4 col-col-sm-4 col-form-label">Por facor ingrese la fecha de hoy (?</label>
+                <label for="fechaFormulario" class="col-sm-4 col-col-sm-4 col-form-label">Por favor ingrese la fecha de hoy (?</label>
                 <div class="col-sm-8"><input value="0" type="date" class="form-control" aria-describedby="emailHelp" style="margin: 5px;" name="fechaFormulario"></div>
             </div>
             <h5><b>Vivienda</b></h5>
