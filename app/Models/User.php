@@ -43,6 +43,6 @@ class User extends Authenticatable
     ];
 
     public function resultados(){
-        return $this->hasMany(Resultado::class);
+        return $this->hasMany(Resultado::class,'id_usuario');
     }
 }

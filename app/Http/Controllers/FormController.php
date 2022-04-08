@@ -6,9 +6,16 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Resultado;
 
+use Response;
+
 class FormController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function postCreate(Request $request)
     {
         $resultado = new Resultado;
@@ -66,6 +73,8 @@ class FormController extends Controller
 
         // $resultado->create(['transporte'=>$transporte,'vivienda'=>$vivienda,'alimentacion'=>$alimentacion,'total'=>$total]);
 
-        return  view('/formulario');
+        return  redirect('/formulario/grafica');
     }
-}
+
+
+    

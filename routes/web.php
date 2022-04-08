@@ -22,11 +22,11 @@ Route::get('/info', function () {
     return view('/info');
 });
 
-Route::post('/formulario',[App\Http\Controllers\FormController::class, 'postCreate']);
+// Route::post('/formulario',[App\Http\Controllers\FormController::class, 'postCreate']);
 
-Route::get('/formulario', function () {
-    return view('/formulario');
-});
+// Route::get('/formulario', function () {
+//     return view('/formulario');
+// });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -37,6 +37,14 @@ Route::get('/home',[App\Http\Controllers\HomeController::class, 'getNews'])->nam
 Route::get('/',[App\Http\Controllers\HomeController::class, 'getNews'])->name('get_news');
 
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/formulario',[App\Http\Controllers\FormController::class, 'postCreate']);
+    Route::get('/formulario', function () {return view('/formulario');});
+    Route::get('/formulario/grafica',[App\Http\Controllers\ChartController::class, 'index']);
+    Route::get('/formulario/grafica',[App\Http\Controllers\ChartController::class, 'getUsersInfo'])->name('getUsersInfo');
+
+    
+});
 
 Auth::routes();
 

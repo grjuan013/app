@@ -15,7 +15,7 @@
                 
                 
                 @foreach ($noticias as $noticia)
-                <div class="carousel-item @if($noticia->id_noticia == 10) active @endif" style=" width:100%; max-height: 500px;margin-top:10px;">
+                <div class="carousel-item @if($noticia->id_noticia == 1) active @endif" style=" width:100%; max-height: 500px;margin-top:10px;">
                     <img src="{{$noticia->imagen}}" class="d-block w-100" alt="{{$noticia->id_noticia}}" style ="float: left;width: 500px;height: 500px;object-fit: cover;border-radius:10px;">
                         <div class="carousel-caption d-none d-md-block"> 
                             <h5>{{$noticia->encabezado}}</h5>
@@ -75,8 +75,8 @@
                     </button>
                 </div>
                 <div class="info">
-                    <button class="learn-more">
-                        <span class="circle" aria-hidden="true">
+                    <button class="learn-more" onclick="location.href = 'https://www.manosverdes.co/huella-de-carbono-y-su-impacto-ambiental/#:~:text=Los%20gases%20que%20mide%20este,del%20nivel%20del%20mar%2C%20etc.'">
+                        <span class="circle" aria-hidden="true" >
                             <span class="icon arrow"></span>
                         </span>
                         <span class="button-text">Podría interesarte...</span>

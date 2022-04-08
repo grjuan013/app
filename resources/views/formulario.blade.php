@@ -124,7 +124,7 @@
                 </table>
                 
             </div>
-            <button class="formButton" type="submit">
+            <button class="formButton" type="submit" onclick="location='/formulario/grafica'">
                 <span>Calcular</span>
             </button>
             <!-- <input type="submit" value="enviar"> -->
