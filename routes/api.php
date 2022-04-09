@@ -18,4 +18,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/resultado', App\Http\Controllers\APIResultadoController::class,'show');
+Route::get('/resultado', [App\Http\Controllers\APIController::class, 'index']);
+Route::get('/resultado/{id}', [App\Http\Controllers\APIController::class, 'show']);
+Route::post('/resultado ', [App\Http\Controllers\APIController::class, 'store']);
+Route::put('/resultado/{id}', [App\Http\Controllers\APIController::class, 'edit']);
+Route::delete('/resultado/{id}', [App\Http\Controllers\APIController::class, 'destroy']);
+
+

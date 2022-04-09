@@ -20,7 +20,7 @@ class ResultadosTableSeeder extends Seeder
         DB::table('resultados')->delete();
 
         DB::table('resultados')->insert([
-            'id_usuario'=> '6',
+            'id_usuario'=> '49',
             'fecha'=> '2022-01-01',
             'transporte'=> '0.4136',
             'vivienda'=> '230.39',
@@ -28,7 +28,7 @@ class ResultadosTableSeeder extends Seeder
             'total' => '246.22573'
         ]);
         DB::table('resultados')->insert([
-            'id_usuario'=> '6',
+            'id_usuario'=> '49',
             'fecha'=> '2022-02-01',
             'transporte'=> '0.4136',
             'vivienda'=> '230.39',
@@ -36,7 +36,7 @@ class ResultadosTableSeeder extends Seeder
             'total' => '146.22573'
         ]);
         DB::table('resultados')->insert([
-            'id_usuario'=> '6',
+            'id_usuario'=> '49',
             'fecha'=> '2022-03-01',
             'transporte'=> '0.4136',
             'vivienda'=> '230.39',

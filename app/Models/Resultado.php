@@ -9,6 +9,7 @@ class Resultado extends Model
 {
     use HasFactory;
     protected $table = 'resultados';
+    protected $primaryKey = 'id_resultado';
 
     protected $fillable = [
         'id_usuario',

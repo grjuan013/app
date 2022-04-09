@@ -22,6 +22,7 @@ Route::get('/info', function () {
     return view('/info');
 });
 
+
 // Route::post('/formulario',[App\Http\Controllers\FormController::class, 'postCreate']);
 
 // Route::get('/formulario', function () {
@@ -42,8 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/formulario', function () {return view('/formulario');});
     Route::get('/formulario/grafica',[App\Http\Controllers\ChartController::class, 'index']);
     Route::get('/formulario/grafica',[App\Http\Controllers\ChartController::class, 'getUsersInfo'])->name('getUsersInfo');
-
-    
+    //Route::apiResource('/resultado', App\Http\Controllers\APIController::class);
 });
 
 Auth::routes();

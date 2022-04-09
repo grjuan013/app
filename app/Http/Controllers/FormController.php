@@ -15,7 +15,7 @@ class FormController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function postCreate(Request $request)
     {
         $resultado = new Resultado;
@@ -59,7 +59,7 @@ class FormController extends Controller
         $transporte     = (int)$avion*0.285 + (int)$transportePublico*0.0284 + (int)$taxi*0.1002 + (int)$combustible*(int)$combTanqueado*(int)$promPersonas;
 
         $alimentacion   = (int)$cantCarnR*(int)$frecCarnR*(27000/10000)+(int)$cantCarnCord*(int)$frecCarnCord*(39200/10000)+(int)$cantCerd*(int)$frecCerd*(3471.3/10000)+(int)$cantPollo*(int)$frecPollo*(35000/10000)+(int)$cantQueso*(int)$frecQueso*(9800/10000)+(int)$cantYog*(int)$frecYog*(1250/10000)+(int)$cantHuevos*(int)$frecHuevos*(31000/10000)+(int)$cantAtun*(int)$frecAtun*(5000/10000)+(int)$cantLeche*(int)$frecLeche*(2500/10000);
-        
+
         $total          = $vivienda + $transporte + $alimentacion;
 
         $resultado->id_usuario = $id;
@@ -76,5 +76,5 @@ class FormController extends Controller
         return  redirect('/formulario/grafica');
     }
 
+}
 
-    
