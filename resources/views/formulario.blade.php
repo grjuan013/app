@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container" style="margin-left: 15%;">
-    <div class="row justify-content-center" style="border-style:solid;border-color: #d9d9d9;border-radius: 10px;background-color:white; width: 80%;padding: 10px;">
+    <div class="row justify-content-center" style="border-style:solid;border-color: #d9d9d9;border-radius: 10px;background-color:white; padding: 10px;">
         <!-- <div class="card-header">{{ __('Dashboard') }}</div> -->
         <img src="/images/huella2.jpg" style="width:50%">
         <form class="form-inline" method="post" action="/formulario">
@@ -142,4 +142,5 @@
 
     </div>
 </div>
+
 @endsection

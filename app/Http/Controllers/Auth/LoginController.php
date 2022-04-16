@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use Auth;
 
+use Alert;
+
+
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -28,6 +31,8 @@ class LoginController extends Controller
      *
      * @var string
      */
+
+    
     protected $redirectTo = '/home';
 
     /**
@@ -42,6 +47,7 @@ class LoginController extends Controller
 
     public function logout() {
         Auth::logout();
+        Alert::info('Logout', 'Haz cerrado sesión exitosamente.');
         return redirect('/login');
       }
 }

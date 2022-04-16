@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Resultado;
+use Alert;
 
 use Response;
 
@@ -73,6 +74,7 @@ class FormController extends Controller
 
         // $resultado->create(['transporte'=>$transporte,'vivienda'=>$vivienda,'alimentacion'=>$alimentacion,'total'=>$total]);
 
+        Alert::success('Correcto', 'Se ha enviado un nuevo resultado.');
         return  redirect('/formulario/grafica');
     }
 

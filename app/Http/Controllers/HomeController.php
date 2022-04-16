@@ -7,6 +7,8 @@ use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\News;
+use Alert;
+
 
 class HomeController extends Controller
 {
